@@ -24,7 +24,7 @@ tl.to(".wave-shape svg path", {
     repeat: -1,
   },
 });
-tl.from(".wave-oval svg path", {
+gsap.from(".wave-oval svg path", {
   scale: 0.96,
   yoyo: true,
   repeat: -1,
