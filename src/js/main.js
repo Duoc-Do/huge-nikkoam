@@ -7,8 +7,9 @@ var carousel = new bootstrap.Carousel(myCarousel, {
 
 /* ====== GSAP ======= */
 gsap.registerPlugin(ScrollTrigger);
-
-gsap.from(".wave-oval svg path", {
+//WITH Timelines (cleaner, more versatile)
+var tl = gsap.timeline({ duration: 0.5 });
+tl.from(".wave-oval svg path", {
   scale: 0.96,
   yoyo: true,
   repeat: -1,
@@ -16,7 +17,7 @@ gsap.from(".wave-oval svg path", {
 });
 
 // wave effect
-gsap.to(".wave-shape svg path", {
+tl.to(".wave-shape svg path", {
   duration: 5,
   opacity: 0.2,
   y: 120,
