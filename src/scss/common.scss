@@ -1,0 +1,508 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $body-font;
+  color: $body-color;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  @include transition(0.3s);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+button {
+  @include transition(0.3s);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+.container {
+  @media #{$xs} {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+/* ============================= 
+    HEADER CSS
+================================ */
+header {
+  position: relative;
+  z-index: 1;
+  .navbar {
+    padding-top: 0.725rem;
+    padding-bottom: 0.725rem;
+    align-items: start;
+  }
+  #navbarSupportedContent {
+    @media #{$md,$xs} {
+      position: absolute;
+      top: 4rem;
+      width: 100%;
+    }
+  }
+  .navbar-light {
+    .navbar-brand {
+      svg {
+        width: 6.891rem;
+        height: auto;
+        @media #{$md, $xs} {
+          width: 10.188rem;
+          height: auto;
+        }
+      }
+    }
+    .navbar-nav {
+      .nav-link {
+        color: $body-color;
+        font-size: 0.75rem;
+        &:hover,
+        &:focus {
+          color: $navbar-light-hover-color;
+        }
+        &.dropdown-toggle {
+          color: $navbar-light-hover-color;
+          padding-top: 0.313rem;
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+    .navbar-collapse {
+      background-color: $white;
+      @media #{$md,$xs} {
+        padding: 1rem 1.5rem;
+      }
+    }
+    .navbar-toggler {
+      padding: 0;
+      margin-top: 0.688rem;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+
+      &.collapsed {
+        .navbar-toggler-icon {
+          &:nth-of-type(1) {
+            transform: rotate(0deg);
+            top: 0.5rem;
+          }
+
+          &:nth-of-type(2) {
+            transform: rotate(0deg);
+            top: -0.5rem;
+          }
+        }
+      }
+      .navbar-toggler-icon {
+        width: 1.188rem;
+        height: 0.125rem;
+        background-color: $body-color;
+        display: block;
+        margin: 0.313rem;
+        position: relative;
+        transition: all 0.3s ease-out 0s;
+        &:nth-of-type(1) {
+          transform: rotate(45deg);
+          top: 0.25rem;
+        }
+        &:nth-of-type(2) {
+          transform: rotate(-45deg);
+          top: -0.25rem;
+        }
+      }
+    }
+  }
+  .dropdown-menu {
+    border: 0;
+    .dropdown-item {
+      border-top: 1px solid $light-grey;
+      font-size: 0.75rem;
+    }
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    @media #{$desktop,$laptop} {
+      padding-right: 1.25rem;
+      padding-left: 1.25rem;
+    }
+  }
+  .header-search {
+    position: relative;
+
+    @media #{$md,$xs} {
+      position: absolute;
+      right: 1.75rem;
+      top: 0.625rem;
+    }
+
+    &:hover {
+      form {
+        opacity: 1;
+        visibility: visible;
+        top: 100%;
+      }
+    }
+
+    a {
+      width: 2.75rem;
+      height: 1.95rem;
+      border-radius: 50%;
+      font-size: 1rem;
+      color: $body-color;
+      @include flex-center;
+      @media #{$md,$xs} {
+        width: 2.75rem;
+        height: 2.75rem;
+      }
+    }
+    form {
+      position: absolute;
+      top: 120%;
+      right: 0;
+      width: 18.125rem;
+      background: $white;
+      @include box-shadow($box-shadow);
+      padding: 1.25rem;
+      border-radius: $radius-10;
+      @include transition(0.3s);
+      opacity: 0;
+      visibility: hidden;
+      z-index: 9;
+
+      input {
+        width: 100%;
+        border: 1px solid $border-color;
+        padding: 0.313rem 0.625rem;
+      }
+    }
+  }
+}
+/* ============================= 
+    SECSION CSS
+================================ */
+
+.wave-shape {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  @media #{$md} {
+    top: -15%;
+    left: -5%;
+  }
+  @media #{$xs} {
+    top: -12%;
+  }
+
+  svg {
+    width: 40%;
+    height: 120%;
+    @media #{$md} {
+      width: 50%;
+      height: 100%;
+    }
+    @media #{$xs} {
+      width: 60%;
+      height: 100%;
+    }
+  }
+}
+.wave-oval {
+  svg {
+    width: 100% !important;
+  }
+}
+.section-1 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .image-container {
+    text-align: center;
+  }
+  .section-title {
+    font-size: 3.625rem;
+    @media #{$xs} {
+      font-size: 1.8125rem;
+      line-height: 1.143;
+    }
+  }
+  .section-sub-title {
+    color: $grey;
+    font-size: 1.875rem;
+    @media #{$xs} {
+      opacity: 0.5;
+      font-size: 1.375rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  .section-content {
+    min-height: 17.75rem;
+    border-left: 1px solid $border-color;
+    padding: 0 2rem;
+    margin: 3.625rem 0 2.5rem;
+    @media #{$xs} {
+      border-left: 0;
+      padding: 0;
+      min-height: auto;
+      margin: 2rem 0 2rem;
+    }
+  }
+  .text-arrow-link {
+    color: $primary-color;
+    text-decoration: none;
+    font-size: 1.125rem;
+    @media #{$xs} {
+      font-size: 1rem;
+    }
+    &:hover {
+      color: $yellow;
+      circle,
+      path {
+        stroke: $yellow;
+      }
+    }
+    i {
+      margin-left: 0.5rem;
+    }
+  }
+}
+// end-section-1
+.section-2 {
+  @extend .section-1;
+  background-color: $primary-color;
+  height: auto;
+  color: $lightest-grey;
+
+  .container {
+    padding-top: 10.404rem;
+    margin-bottom: 0rem;
+    @media #{$xs} {
+      padding-top: 4rem;
+      padding-bottom: 5.5rem;
+    }
+  }
+  @media #{$xs} {
+    .description-container {
+      margin-top: 4rem;
+    }
+  }
+  .sub-text {
+    font-size: 1.125rem;
+    margin-top: 1.221rem;
+    margin-bottom: 2rem;
+    @media #{xs} {
+      margin-bottom: 2.5rem;
+      margin-top: 0;
+    }
+  }
+  .section-title {
+    font-size: 4.57rem;
+    color: $lightest-grey;
+    @media #{$xs} {
+      font-size: 2.625rem;
+    }
+  }
+  .section-content {
+    border-left-color: $lightest-grey;
+    margin-bottom: 0;
+    min-height: 17.5rem;
+    @media #{$xs} {
+      min-height: auto;
+    }
+    .text-content {
+      margin: 6.5rem 0 3rem;
+      @media #{$xs} {
+        margin: 3rem 0;
+      }
+    }
+  }
+  .text-arrow-link {
+    color: $lightest-grey;
+    circle,
+    path {
+      stroke: $lightest-grey;
+    }
+  }
+}
+// end-section-2
+
+.section-3 {
+  @extend .section-1;
+  height: auto;
+  position: relative;
+  &::before {
+    position: absolute;
+    content: "";
+    background-color: $lightest-grey;
+  }
+  .container {
+    padding: 11.5rem 0 3rem;
+    @media #{$xs} {
+      padding: 4rem 0 5.688rem;
+    }
+  }
+
+  .section-title {
+    color: $body-color;
+    font-size: 4.563rem;
+    font-weight: normal;
+    max-width: 29.5rem;
+    @media #{$xs} {
+      font-size: 2.625rem;
+    }
+  }
+
+  .section-sub-title {
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-bottom: 2.5rem;
+    max-width: 29.5rem;
+    @media #{$xs} {
+      opacity: 1;
+      font-size: 1.375rem;
+      max-width: 16.563rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  .featured-item {
+    @media #{$md,$xs} {
+      margin-bottom: 3.5rem;
+    }
+    .chart-block {
+      display: block;
+      width: 100%;
+      svg {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .featured-description {
+      margin-top: 5.341rem;
+      max-width: 19.75rem;
+      .list-group {
+        margin-bottom: 3.5rem;
+        border-radius: 0;
+        .list-group-item {
+          border-left: 0;
+          border-right: 0;
+          padding-left: 0;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          font-size: 1.125rem;
+          background-color: transparent;
+          color: $body-color;
+          border-color: $border-color;
+          span {
+            margin-left: 1rem;
+            color: $light-grey;
+          }
+        }
+      }
+      &.d-block {
+        margin-top: 1.5rem;
+        &.d-lg-none {
+          margin-bottom: 1.625rem;
+        }
+        .list-group {
+          margin-bottom: 0;
+          .list-group-item {
+            border: 0;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            font-size: 0.875rem;
+          }
+        }
+      }
+    }
+  }
+
+  .text-arrow-link {
+    padding-left: 0.25rem;
+    @media #{$xs} {
+      padding-left: 0;
+    }
+  }
+}
+// end-section-3
+
+/* ============================= 
+    CAROUSEL CSS
+================================ */
+.list-featured {
+  position: relative;
+}
+.data-numbers {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-end;
+  @media #{$md,$xs} {
+    flex-direction: row;
+    justify-content: start;
+    margin-top: 2.5rem;
+    div {
+      margin-right: 1.5rem;
+    }
+  }
+  @media #{$xxs} {
+    justify-content: space-between;
+    div {
+      margin-right: auto;
+    }
+  }
+}
+.carousel-indicators {
+  top: -11rem;
+  justify-content: end;
+
+  line-height: 1.2;
+  @media #{$md,$xs} {
+    position: static;
+    margin: 0;
+  }
+  a {
+    color: $primary-color;
+  }
+  [data-bs-target] {
+    background-color: transparent;
+    opacity: 0.1;
+    border-top: 0;
+    border-bottom: 0;
+    font-size: 9.375rem;
+    @media #{$md,$xs} {
+      font-size: 3.25rem;
+    }
+  }
+  .active {
+    opacity: 1;
+  }
+}
+.carousel-inner {
+  margin-top: 3.625rem;
+  @media #{$md,$xs} {
+    margin-top: 2.5rem;
+  }
+}

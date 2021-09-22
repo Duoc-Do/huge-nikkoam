@@ -1,0 +1,117 @@
+//================= typography
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+// Font Family
+
+$body-font: "Roboto", sans-serif;
+
+$body-font-size: 16px;
+
+$caption-font-size: 14px;
+
+// Colors
+$white: #fff;
+$black: #222;
+$grey: #474747;
+$light-grey: #8a8a8a;
+$lightest-grey: #fafafa;
+$yellow: #ffd74a;
+// colors
+
+$white: #ffffff;
+$black: #000000;
+$heading-color: #1a1a1a;
+$body-color: #1a1a1a;
+$primary-color: #00a4b8;
+$border-color: #8a8a8a;
+$navbar-light-hover-color: #8a8a8a;
+// box-shadow
+$box-shadow: 0px 5px 25px rgba(218, 211, 211, 0.3);
+$box-shadow-2: 0px 5px 25px rgba(47, 128, 237, 0.3);
+
+// border-radius
+
+$radius-3: 3px;
+$radius-10: 10px;
+$radius-30: 30px;
+$radius-50: 50px;
+$radius-full: 50%;
+$radius-10-0: 10px 0px;
+
+// Responsive Variables
+$desktop: "only screen and (min-width: 1400px)";
+$laptop: "only screen and (min-width: 1200px) and (max-width: 1399px)";
+$lg: "only screen and (min-width: 992px) and (max-width: 1199px)";
+$md: "only screen and (min-width: 768px) and (max-width: 991px)";
+$xs: "(max-width: 767px)";
+$sm: "only screen and (min-width: 575px) and (max-width: 767px)";
+$xxs: "only screen and (min-width:320px) and (max-width: 374px)";
+@mixin transition($time) {
+  -webkit-transition: all $time ease-out 0s;
+  -moz-transition: all $time ease-out 0s;
+  -ms-transition: all $time ease-out 0s;
+  -o-transition: all $time ease-out 0s;
+  transition: all $time ease-out 0s;
+}
+
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -ms-transform: $value;
+  -o-transform: $value;
+  transform: $value;
+}
+
+@mixin user-select($value) {
+  -webkit-user-select: $value;
+  -moz-user-select: $value;
+  -ms-user-select: $value;
+  user-select: $value;
+}
+
+@mixin box-sizing($value) {
+  -webkit-box-sizing: $value;
+  -moz-box-sizing: $value;
+  box-sizing: $value;
+}
+
+@mixin animation($value) {
+  -webkit-animation: $value;
+  -moz-animation: $value;
+  -o-animation: $value;
+  animation: $value;
+}
+
+@mixin animation-delay($value) {
+  -webkit-animation-delay: $value;
+  -moz-animation-delay: $value;
+  -o-animation-delay: $value;
+  animation-delay: $value;
+}
+
+@mixin box-shadow($value) {
+  -webkit-box-shadow: $value;
+  -moz-box-shadow: $value;
+  box-shadow: $value;
+}
+
+// Placeholder Mixins
+@mixin placeholder {
+  &::placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
